@@ -156,13 +156,15 @@ public class ComponentViewController extends ChildController<ComponentLayout> {
     @Override
     protected WindowInsetsCompat onApplyWindowInsets(View view, WindowInsetsCompat insets) {
         final Insets systemBarsInsets = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+        final Options currentOptions = resolveCurrentOptions(presenter.defaultOptions);
+        final int keyboardBottomInset = currentOptions.layout.adjustResize.get(true) ?
+                insets.getInsets(WindowInsetsCompat.Type.ime()).bottom : 0;
         int systemWindowInsetTop = insets.getInsets(WindowInsetsCompat.Type.statusBars()).top +
                 insets.getInsets(WindowInsetsCompat.Type.navigationBars()).top -
                 systemBarsInsets.top;
-        int systemWindowInsetBottom = insets.getInsets(WindowInsetsCompat.Type.ime()).bottom +
+        int systemWindowInsetBottom = keyboardBottomInset +
                 insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom -
                 systemBarsInsets.bottom;
-
         WindowInsetsCompat finalInsets = new WindowInsetsCompat.Builder()
                 .setInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.ime(),
                         Insets.of(systemBarsInsets.left,
