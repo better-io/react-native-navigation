@@ -3,6 +3,7 @@ package com.reactnativenavigation.viewcontrollers.component;
 import android.app.Activity;
 import android.content.res.Configuration;
 import android.view.View;
+import android.util.Log;
 
 import com.reactnativenavigation.utils.LogKt;
 import com.reactnativenavigation.viewcontrollers.viewcontroller.ScrollEventListener;
@@ -191,6 +192,10 @@ public class ComponentViewController extends ChildController<ComponentLayout> {
         if (focusView != null) {
             focusView.clearFocus();
         }
+    }
+    
+    private void logInsets(String name, Insets insets) {
+        Log.i(name, "top: " + insets.top + ", bottom: " + insets.bottom + ", left: " + insets.left + ", right: " + insets.right);
     }
 
     @Override
