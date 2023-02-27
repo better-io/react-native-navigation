@@ -13,7 +13,7 @@ export declare class NativeEventsReceiver {
     registerSearchBarUpdatedListener(_callback: (event: SearchBarUpdatedEvent) => void): EmitterSubscription;
     registerSearchBarCancelPressedListener(_callback: (event: SearchBarCancelPressedEvent) => void): EmitterSubscription;
     registerPreviewCompletedListener(_callback: (event: PreviewCompletedEvent) => void): EmitterSubscription;
-    registerCommandCompletedListener(_callback: (data: CommandCompletedEvent) => void): EmitterSubscription;
+    registerCommandCompletedListener(callback: (data: CommandCompletedEvent) => void): EmitterSubscription;
     registerBottomTabSelectedListener(_callback: (data: BottomTabSelectedEvent) => void): EmitterSubscription;
     registerBottomTabLongPressedListener(_callback: (data: BottomTabLongPressedEvent) => void): EmitterSubscription;
     registerScreenPoppedListener(_callback: (event: ScreenPoppedEvent) => void): EmitterSubscription;

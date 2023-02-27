@@ -5,7 +5,7 @@ export declare class OptionsCrawler {
     readonly store: Store;
     readonly uniqueIdProvider: UniqueIdProvider;
     constructor(store: Store, uniqueIdProvider: UniqueIdProvider);
-    crawl(api?: Layout): void;
+    crawl(api?: Layout<any>): void;
     private topTabs;
     private sideMenu;
     private bottomTabs;

@@ -3,6 +3,7 @@ import { ComponentProps } from '../ComponentProps';
 export declare const LayoutComponent: {
     new (props: Readonly<ComponentProps>): {
         render(): JSX.Element;
+        componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void;
         context: any;
         setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<ComponentProps>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
         forceUpdate(callback?: (() => void) | undefined): void;
@@ -16,7 +17,6 @@ export declare const LayoutComponent: {
         componentDidMount?(): void;
         shouldComponentUpdate?(nextProps: Readonly<ComponentProps>, nextState: Readonly<{}>, nextContext: any): boolean;
         componentWillUnmount?(): void;
-        componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void;
         getSnapshotBeforeUpdate?(prevProps: Readonly<ComponentProps>, prevState: Readonly<{}>): any;
         componentDidUpdate?(prevProps: Readonly<ComponentProps>, prevState: Readonly<{}>, snapshot?: any): void;
         componentWillMount?(): void;
@@ -28,6 +28,7 @@ export declare const LayoutComponent: {
     };
     new (props: ComponentProps, context?: any): {
         render(): JSX.Element;
+        componentDidCatch(error: Error, errorInfo: React.ErrorInfo): void;
         context: any;
         setState<K extends never>(state: {} | ((prevState: Readonly<{}>, props: Readonly<ComponentProps>) => {} | Pick<{}, K> | null) | Pick<{}, K> | null, callback?: (() => void) | undefined): void;
         forceUpdate(callback?: (() => void) | undefined): void;
@@ -41,7 +42,6 @@ export declare const LayoutComponent: {
         componentDidMount?(): void;
         shouldComponentUpdate?(nextProps: Readonly<ComponentProps>, nextState: Readonly<{}>, nextContext: any): boolean;
         componentWillUnmount?(): void;
-        componentDidCatch?(error: Error, errorInfo: React.ErrorInfo): void;
         getSnapshotBeforeUpdate?(prevProps: Readonly<ComponentProps>, prevState: Readonly<{}>): any;
         componentDidUpdate?(prevProps: Readonly<ComponentProps>, prevState: Readonly<{}>, snapshot?: any): void;
         componentWillMount?(): void;

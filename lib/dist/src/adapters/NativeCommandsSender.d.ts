@@ -1,3 +1,4 @@
+import { NavigationConstants } from './Constants';
 export declare class NativeCommandsSender {
     private readonly nativeCommandsModule;
     constructor();
@@ -20,4 +21,6 @@ export declare class NativeCommandsSender {
     dismissOverlay(commandId: string, componentId: string): Promise<any>;
     dismissAllOverlays(commandId: string): Promise<any>;
     getLaunchArgs(commandId: string): Promise<any>;
+    getNavigationConstants(): Promise<NavigationConstants>;
+    getNavigationConstantsSync(): NavigationConstants;
 }

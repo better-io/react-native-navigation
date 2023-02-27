@@ -91,7 +91,7 @@ export interface OptionsStatusBar {
      * Animate StatusBar style changes.
      * #### (iOS specific)
      */
-    animated?: boolean;
+    animate?: boolean;
     /**
      * Automatically hide the StatusBar when the TopBar hides.
      * #### (iOS specific)
@@ -568,6 +568,8 @@ export interface OptionsTopBar {
      */
     leftButtonColor?: Color;
     rightButtonColor?: Color;
+    leftButtonBackgroundColor?: Color;
+    rightButtonBackgroundColor?: Color;
     leftButtonDisabledColor?: Color;
     rightButtonDisabledColor?: Color;
     /**
